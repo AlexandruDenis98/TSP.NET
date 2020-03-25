@@ -1,0 +1,23 @@
+C:\Users\iusti\OneDrive\Documents\GitHub\TS.Net-Laborator\Laboratorul 6\ObjectWCF\bin\Debug\ObjectWCF.dll
+C:\Users\iusti\OneDrive\Documents\GitHub\TS.Net-Laborator\Laboratorul 6\ObjectWCF\bin\Debug\ObjectWCF.pdb
+C:\Users\iusti\OneDrive\Documents\GitHub\TS.Net-Laborator\Laboratorul 6\ObjectWCF\bin\Debug\Laboratorul 6.dll
+C:\Users\iusti\OneDrive\Documents\GitHub\TS.Net-Laborator\Laboratorul 6\ObjectWCF\bin\Debug\EntityFramework.dll
+C:\Users\iusti\OneDrive\Documents\GitHub\TS.Net-Laborator\Laboratorul 6\ObjectWCF\bin\Debug\Laboratorul 6.pdb
+C:\Users\iusti\OneDrive\Documents\GitHub\TS.Net-Laborator\Laboratorul 6\ObjectWCF\bin\Debug\Laboratorul 6.dll.config
+C:\Users\iusti\OneDrive\Documents\GitHub\TS.Net-Laborator\Laboratorul 6\ObjectWCF\bin\Debug\EntityFramework.xml
+C:\Users\iusti\OneDrive\Documents\GitHub\TS.Net-Laborator\Laboratorul 6\ObjectWCF\obj\Debug\ObjectWCF.csprojAssemblyReference.cache
+C:\Users\iusti\OneDrive\Documents\GitHub\TS.Net-Laborator\Laboratorul 6\ObjectWCF\obj\Debug\ObjectWCF.csproj.CoreCompileInputs.cache
+C:\Users\iusti\OneDrive\Documents\GitHub\TS.Net-Laborator\Laboratorul 6\ObjectWCF\obj\Debug\ObjectWCF.csproj.CopyComplete
+C:\Users\iusti\OneDrive\Documents\GitHub\TS.Net-Laborator\Laboratorul 6\ObjectWCF\obj\Debug\ObjectWCF.dll
+C:\Users\iusti\OneDrive\Documents\GitHub\TS.Net-Laborator\Laboratorul 6\ObjectWCF\obj\Debug\ObjectWCF.pdb
+C:\Users\alexa\Desktop\Iulia\ObjectWCF\bin\Debug\ObjectWCF.dll
+C:\Users\alexa\Desktop\Iulia\ObjectWCF\bin\Debug\ObjectWCF.pdb
+C:\Users\alexa\Desktop\Iulia\ObjectWCF\bin\Debug\Laboratorul 6.dll
+C:\Users\alexa\Desktop\Iulia\ObjectWCF\bin\Debug\EntityFramework.dll
+C:\Users\alexa\Desktop\Iulia\ObjectWCF\bin\Debug\Laboratorul 6.pdb
+C:\Users\alexa\Desktop\Iulia\ObjectWCF\bin\Debug\Laboratorul 6.dll.config
+C:\Users\alexa\Desktop\Iulia\ObjectWCF\bin\Debug\EntityFramework.xml
+C:\Users\alexa\Desktop\Iulia\ObjectWCF\obj\Debug\ObjectWCF.csprojAssemblyReference.cache
+C:\Users\alexa\Desktop\Iulia\ObjectWCF\obj\Debug\ObjectWCF.csproj.CopyComplete
+C:\Users\alexa\Desktop\Iulia\ObjectWCF\obj\Debug\ObjectWCF.dll
+C:\Users\alexa\Desktop\Iulia\ObjectWCF\obj\Debug\ObjectWCF.pdb
