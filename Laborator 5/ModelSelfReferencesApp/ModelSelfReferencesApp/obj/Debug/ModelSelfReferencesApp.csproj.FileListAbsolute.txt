@@ -1,0 +1,12 @@
+C:\Users\alexa\source\repos\ModelSelfReferencesApp\ModelSelfReferencesApp\bin\Debug\ModelSelfReferencesApp.exe.config
+C:\Users\alexa\source\repos\ModelSelfReferencesApp\ModelSelfReferencesApp\bin\Debug\ModelSelfReferencesApp.exe
+C:\Users\alexa\source\repos\ModelSelfReferencesApp\ModelSelfReferencesApp\bin\Debug\ModelSelfReferencesApp.pdb
+C:\Users\alexa\source\repos\ModelSelfReferencesApp\ModelSelfReferencesApp\bin\Debug\EntityFramework.dll
+C:\Users\alexa\source\repos\ModelSelfReferencesApp\ModelSelfReferencesApp\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\alexa\source\repos\ModelSelfReferencesApp\ModelSelfReferencesApp\bin\Debug\EntityFramework.xml
+C:\Users\alexa\source\repos\ModelSelfReferencesApp\ModelSelfReferencesApp\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\alexa\source\repos\ModelSelfReferencesApp\ModelSelfReferencesApp\obj\Debug\ModelSelfReferencesApp.csprojAssemblyReference.cache
+C:\Users\alexa\source\repos\ModelSelfReferencesApp\ModelSelfReferencesApp\obj\Debug\ModelSelfReferencesApp.csproj.CoreCompileInputs.cache
+C:\Users\alexa\source\repos\ModelSelfReferencesApp\ModelSelfReferencesApp\obj\Debug\ModelSelfReferencesApp.csproj.CopyComplete
+C:\Users\alexa\source\repos\ModelSelfReferencesApp\ModelSelfReferencesApp\obj\Debug\ModelSelfReferencesApp.exe
+C:\Users\alexa\source\repos\ModelSelfReferencesApp\ModelSelfReferencesApp\obj\Debug\ModelSelfReferencesApp.pdb
