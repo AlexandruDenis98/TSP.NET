@@ -1,0 +1,49 @@
+﻿@page
+@model ClientWeb.Pages.File.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>FileDTO</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FileDTO.Path)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FileDTO.Path)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FileDTO.Created_at)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FileDTO.Created_at)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FileDTO.Type)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FileDTO.Type)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FileDTO.Path_changed)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FileDTO.Path_changed)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FileDTO.Location)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FileDTO.Location)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.FileDTO.FileId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

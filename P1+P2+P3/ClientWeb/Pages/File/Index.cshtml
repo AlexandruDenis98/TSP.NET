@@ -1,0 +1,68 @@
+﻿@page
+@model ClientWeb.Pages.File.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Filter</h1>
+
+    <form>
+        <p>
+            Keyword: <input type="text" asp-for="FilterKeyword" placeholder="" />
+
+            Location: <input type="text" asp-for="FilterLocation" placeholder="" />
+            <input type="submit" value="Filter" />
+        </p>
+         Number of files: <h5>@Model.Number</h5>
+    </form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FileDTO[0].Path)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FileDTO[0].Created_at)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FileDTO[0].Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FileDTO[0].Path_changed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FileDTO[0].Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FileDTO[0].Keywords)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+
+@foreach (var item in Model.fileDTOList) {
+        <tr>
+            <td>
+                <img src="@Html.DisplayFor(modelItem => item.Path)" width="100" height="100"/>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Created_at)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Path_changed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Keywords.Count)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

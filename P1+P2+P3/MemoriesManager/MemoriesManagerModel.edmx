@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MemoriesManagerModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="MemoriesManagerModelStoreContainer">
+    <EntitySet Name="Files" EntityType="MemoriesManagerModel.Store.Files" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Keywords" EntityType="MemoriesManagerModel.Store.Keywords" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="People" EntityType="MemoriesManagerModel.Store.People" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FileKeyword" EntityType="MemoriesManagerModel.Store.FileKeyword" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FilePerson" EntityType="MemoriesManagerModel.Store.FilePerson" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_FileKeyword_File" Association="MemoriesManagerModel.Store.FK_FileKeyword_File">
+      <End Role="File" EntitySet="Files" />
+      <End Role="FileKeyword" EntitySet="FileKeyword" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FileKeyword_Keyword" Association="MemoriesManagerModel.Store.FK_FileKeyword_Keyword">
+      <End Role="Keyword" EntitySet="Keywords" />
+      <End Role="FileKeyword" EntitySet="FileKeyword" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FilePerson_File" Association="MemoriesManagerModel.Store.FK_FilePerson_File">
+      <End Role="File" EntitySet="Files" />
+      <End Role="FilePerson" EntitySet="FilePerson" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FilePerson_Person" Association="MemoriesManagerModel.Store.FK_FilePerson_Person">
+      <End Role="Person" EntitySet="People" />
+      <End Role="FilePerson" EntitySet="FilePerson" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Files">
+    <Key>
+      <PropertyRef Name="FileId" />
+    </Key>
+    <Property Name="FileId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Path" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Created_at" Type="datetime" Nullable="false" />
+    <Property Name="Type" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Path_changed" Type="bit" Nullable="false" />
+    <Property Name="Location" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Keywords">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Kword" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="People">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="First_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Last_name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FileKeyword">
+    <Key>
+      <PropertyRef Name="Files_FileId" />
+      <PropertyRef Name="Keywords_Id" />
+    </Key>
+    <Property Name="Files_FileId" Type="int" Nullable="false" />
+    <Property Name="Keywords_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FilePerson">
+    <Key>
+      <PropertyRef Name="Files_FileId" />
+      <PropertyRef Name="People_Id" />
+    </Key>
+    <Property Name="Files_FileId" Type="int" Nullable="false" />
+    <Property Name="People_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_FileKeyword_File">
+    <End Role="File" Type="MemoriesManagerModel.Store.Files" Multiplicity="1" />
+    <End Role="FileKeyword" Type="MemoriesManagerModel.Store.FileKeyword" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="File">
+        <PropertyRef Name="FileId" />
+      </Principal>
+      <Dependent Role="FileKeyword">
+        <PropertyRef Name="Files_FileId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FileKeyword_Keyword">
+    <End Role="FileKeyword" Type="MemoriesManagerModel.Store.FileKeyword" Multiplicity="*" />
+    <End Role="Keyword" Type="MemoriesManagerModel.Store.Keywords" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Keyword">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FileKeyword">
+        <PropertyRef Name="Keywords_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FilePerson_File">
+    <End Role="File" Type="MemoriesManagerModel.Store.Files" Multiplicity="1" />
+    <End Role="FilePerson" Type="MemoriesManagerModel.Store.FilePerson" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="File">
+        <PropertyRef Name="FileId" />
+      </Principal>
+      <Dependent Role="FilePerson">
+        <PropertyRef Name="Files_FileId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FilePerson_Person">
+    <End Role="FilePerson" Type="MemoriesManagerModel.Store.FilePerson" Multiplicity="*" />
+    <End Role="Person" Type="MemoriesManagerModel.Store.People" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FilePerson">
+        <PropertyRef Name="People_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="MemoriesManagerModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="MemoriesManagerModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Files" EntityType="MemoriesManagerModel.File" />
+          <EntitySet Name="Keywords" EntityType="MemoriesManagerModel.Keyword" />
+          <EntitySet Name="People" EntityType="MemoriesManagerModel.Person" />
+          <AssociationSet Name="FileKeyword" Association="MemoriesManagerModel.FileKeyword">
+            <End Role="File" EntitySet="Files" />
+            <End Role="Keyword" EntitySet="Keywords" />
+          </AssociationSet>
+          <AssociationSet Name="FilePerson" Association="MemoriesManagerModel.FilePerson">
+            <End Role="File" EntitySet="Files" />
+            <End Role="Person" EntitySet="People" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="File">
+          <Key>
+            <PropertyRef Name="FileId" />
+          </Key>
+          <Property Name="FileId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Path" Type="String" Nullable="false" />
+          <Property Name="Created_at" Type="DateTime" Nullable="false" />
+          <Property Name="Type" Type="String" Nullable="false" />
+          <Property Name="Path_changed" Type="Boolean" Nullable="false" />
+          <Property Name="Location" Type="String" Nullable="false" />
+          <NavigationProperty Name="Keywords" Relationship="MemoriesManagerModel.FileKeyword" FromRole="File" ToRole="Keyword" />
+          <NavigationProperty Name="People" Relationship="MemoriesManagerModel.FilePerson" FromRole="File" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="Keyword">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Kword" Type="String" Nullable="false" />
+          <NavigationProperty Name="Files" Relationship="MemoriesManagerModel.FileKeyword" FromRole="Keyword" ToRole="File" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" ConcurrencyMode="None" />
+          <Property Name="First_name" Type="String" Nullable="false" />
+          <Property Name="Last_name" Type="String" Nullable="false" />
+          <NavigationProperty Name="Files" Relationship="MemoriesManagerModel.FilePerson" FromRole="Person" ToRole="File" />
+        </EntityType>
+        <Association Name="FileKeyword">
+          <End Type="MemoriesManagerModel.File" Role="File" Multiplicity="*" />
+          <End Type="MemoriesManagerModel.Keyword" Role="Keyword" Multiplicity="*" />
+        </Association>
+        <Association Name="FilePerson">
+          <End Type="MemoriesManagerModel.File" Role="File" Multiplicity="*" />
+          <End Type="MemoriesManagerModel.Person" Role="Person" Multiplicity="*" />
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MemoriesManagerModelStoreContainer" CdmEntityContainer="MemoriesManagerModelContainer">
+    <EntitySetMapping Name="Files">
+      <EntityTypeMapping TypeName="IsTypeOf(MemoriesManagerModel.File)">
+        <MappingFragment StoreEntitySet="Files">
+          <ScalarProperty Name="FileId" ColumnName="FileId" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="Created_at" ColumnName="Created_at" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Path_changed" ColumnName="Path_changed" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Keywords">
+      <EntityTypeMapping TypeName="IsTypeOf(MemoriesManagerModel.Keyword)">
+        <MappingFragment StoreEntitySet="Keywords">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Kword" ColumnName="Kword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="People">
+      <EntityTypeMapping TypeName="IsTypeOf(MemoriesManagerModel.Person)">
+        <MappingFragment StoreEntitySet="People">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="First_name" ColumnName="First_name" />
+          <ScalarProperty Name="Last_name" ColumnName="Last_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FileKeyword" TypeName="MemoriesManagerModel.FileKeyword" StoreEntitySet="FileKeyword">
+      <EndProperty Name="File">
+        <ScalarProperty Name="FileId" ColumnName="Files_FileId" />
+      </EndProperty>
+      <EndProperty Name="Keyword">
+        <ScalarProperty Name="Id" ColumnName="Keywords_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FilePerson" TypeName="MemoriesManagerModel.FilePerson" StoreEntitySet="FilePerson">
+      <EndProperty Name="File">
+        <ScalarProperty Name="FileId" ColumnName="Files_FileId" />
+      </EndProperty>
+      <EndProperty Name="Person">
+        <ScalarProperty Name="Id" ColumnName="People_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
